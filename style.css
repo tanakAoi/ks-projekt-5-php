@@ -343,6 +343,10 @@ body {
   min-width: 220px;
 }
 
+.admin-bar .doc-header {
+  top: 32px;
+}
+
 .sidebar-nav {
   overflow-y: auto;
   font-size: var(--font-size-small);
@@ -393,14 +397,14 @@ body {
   display: flex;
   gap: 1rem;
 }
-.header-nav__item--current .header-nav__link {
+.header-nav__item--current a, .header-nav__item.current-menu-item a, .header-nav .menu-item--current a, .header-nav .menu-item.current-menu-item a {
   font-weight: 500;
   color: var(--color-light-100);
 }
-.header-nav__link {
+.header-nav__link, .header-nav .menu-item a {
   color: var(--color-dark-700);
 }
-.header-nav__link:hover {
+.header-nav__link:hover, .header-nav .menu-item a:hover {
   color: var(--color-light-500);
 }
 

@@ -62,11 +62,11 @@
         gap: 1rem;
     }
 
-    &__item {
+    &__item, .menu-item {
 
-        &--current {
+        &--current, &.current-menu-item {
 
-            .header-nav__link {
+            a {
                 font-weight: 500;
                 color: var(--color-light-100);
             }
@@ -74,7 +74,7 @@
         }
     }
 
-    &__link {
+    &__link, .menu-item a {
         color: var(--color-dark-700);
 
         &:hover {
