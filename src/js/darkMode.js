@@ -35,7 +35,7 @@ const darkModeToggle = () => {
         themeToggleButtonIcon.innerText = iconText
 
         // Remove all classes from body
-        body.classList = ''
+        body.classList.remove('light', 'dark')
 
         // Add light class to body if data-attribute value was light
         if ( theme === 'light' ) {
@@ -49,7 +49,7 @@ const darkModeToggle = () => {
 
         // If data-attribute was default, remove all classes from body
         if ( theme === 'default' ) {
-            body.classList = ''
+            body.classList.remove('light', 'dark')
         }
 
         // For each parent of all buttons, remove current class
