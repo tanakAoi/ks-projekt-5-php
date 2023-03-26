@@ -1,4 +1,11 @@
-<?php 
+<?php
+
+/**
+ * Theme Support
+ */
+ 
+ add_theme_support( 'post-thumbnails' );
+
 
 /**
  * Register Navigation Locations
