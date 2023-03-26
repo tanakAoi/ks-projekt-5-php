@@ -1,0 +1,41 @@
+.post {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &__date, &__type {
+        color: var(--color-dark-500);
+        background-color: hsla(189, 100%, 37%, 0.1);
+        display: inline-block;
+        padding: 0.3rem 0.5rem;
+        border-radius: 5px;
+        text-transform: capitalize;
+
+        // & + h3 {
+        //     margin-top: 1rem;
+        // }
+    }
+
+    &__title {
+        margin: 1rem 0;
+    }
+
+    &__content {
+        display: flex;
+        gap: var(--gap-s);
+        align-items: center;
+
+        p {
+            color: var(--color-light-700);
+        }
+    }
+
+    &__thumbnail {
+        flex: 0 0 150px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
