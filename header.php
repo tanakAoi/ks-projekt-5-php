@@ -45,12 +45,8 @@
                     
                     ?>
 
-                    <!-- Header serch form -->
-                    <div class="search-form">
-                        <form action="" class="search-form__form">
-                            <input type="text" class="search-form__input" placeholder="Search documentation...">
-                        </form>
-                    </div>
+                    <?php get_search_form() ?>
+
                 </div>
 
             </div>
