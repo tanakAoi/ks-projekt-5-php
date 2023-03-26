@@ -1,36 +1,53 @@
 <?php get_header(); ?>
 
-        <!-- Main -->
-        <main class="doc-content">
-            <div class="doc-content__inner">
+    <!-- Main -->
+    <main class="doc-content">
+        <div class="doc-content__inner">
 
-                <?php get_sidebar(); ?>
+            <?php get_sidebar(); ?>
 
-                <!-- Article -->
-                <article class="page">
+            <!-- Article -->
+            <article class="page">
 
-                    <header class="page__header">
-
+                <header class="page__header">
                     <?php get_template_part('breadcrumb') ?>
+                    <h1>Documentation</h1>
+                </header>
 
-                        <h1>Documentation</h1>
-                    </header>
+                <h2>Latest Updates:</h2>
 
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae maxime dolores accusamus inventore libero ab labore optio quibusdam porro? Error vero suscipit ullam a magni! Dolore cupiditate harum fuga ut!
-                    Iure sequi recusandae quod consequuntur est, illum, tenetur ipsum a error quis ducimus non corporis accusamus suscipit rerum cum animi. Impedit beatae, perferendis at quo suscipit dicta voluptatem consequatur eveniet?
-                    Libero sint illum deleniti mollitia consequuntur voluptatibus praesentium magni animi qui commodi sunt molestias vero dolorum, maxime nemo iste nihil, dolorem natus cupiditate adipisci temporibus ullam amet nam. Et, numquam?
-                    Perspiciatis minus error reiciendis autem iste nobis eos veritatis temporibus, eum cumque, alias labore perferendis a aut similique ab at minima possimus quas amet! Cumque sequi sint laudantium delectus quam.
-                    Praesentium, accusantium! Voluptates cupiditate quibusdam pariatur facilis quod corporis suscipit doloremque similique ipsam et rem nulla aliquid alias autem, unde illum natus libero, facere aperiam consectetur. Aspernatur deserunt reprehenderit id?</p>
-                    
-                    <footer class="page__footer">
-                        <div class="page__lastupdated">Last updated on February 20, 2023</div>
-                    </footer>
+                <!-- Page Content -->
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-                </article>
+                <div class="post">
+                    <span class="post__date"><?php the_time('j F, Y - H:i'); ?></span>
+                    <h3 class="post__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <div class="post__content">
 
-                <?php get_template_part('toc') ?>
+                        <?php if ( has_post_thumbnail() ) : ?>
 
-            </div>
-        </main>
+                            <div class="post__thumbnail">
+                                <?php the_post_thumbnail('thumbnail'); ?>
+                            </div>
+                            
+                        <?php endif; ?>
+
+                        <?php the_excerpt(); ?>
+
+                    </div>
+                </div>
+
+                <?php endwhile; endif; ?>
+
+                <footer class="page__footer">
+                    <div class="page__lastupdated">Last updated on February 20, 2023</div>
+                </footer>
+
+            </article>
+
+            <?php //get_template_part('toc') ?>
+
+        </div>
+    </main>
 
 <?php get_footer(); ?>
